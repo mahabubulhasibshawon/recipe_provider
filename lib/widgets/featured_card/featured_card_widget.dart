@@ -10,9 +10,6 @@ class FeaturedCardWidget extends StatelessWidget {
         alignment: Alignment.bottomLeft,
         children: [
           Image.asset('assets/images/Card.png'),
-          // Text('Noodles'),
-          // SizedBox(height: 2,),
-          // Text('Noodles heleofjo ea'),
         ],
       ),
     );

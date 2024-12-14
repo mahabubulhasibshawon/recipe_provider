@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:reciepe/main.dart';
 import 'package:reciepe/provider/theme_provider.dart';
+import 'package:reciepe/widgets/category_widget.dart';
 import 'package:reciepe/widgets/featured_card/featured_card_widget.dart';
+import 'package:reciepe/widgets/recipe_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
+      backgroundColor: Theme.of(context).colorScheme.onPrimary,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -52,21 +55,22 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       const Icon(CupertinoIcons.cart),
                       IconButton(
-                        icon: const Icon(Icons.light_mode),
-                        onPressed: () => context.read<ThemeProvider>().setLightTheme(),
+                        icon: Icon(themeProvider.themeMode == ThemeMode.dark ? Icons.light_mode : Icons.dark_mode),
+                        onPressed: () {
+                          themeProvider.toggleTheme();
+                        },
                       ),
-                      IconButton(
-                        icon: const Icon(Icons.dark_mode),
-                        onPressed: () => context.read<ThemeProvider>().setDarkTheme(),
-                      ),
+                      // Dark Mode Button
                     ],
-                  )
+                  ),
+
                 ],
               ),
               //   Featured Card
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 20,),
                   Text('Featured',
                       style: Theme.of(context).textTheme.titleLarge),
                   SingleChildScrollView(
@@ -76,9 +80,58 @@ class HomeScreen extends StatelessWidget {
                       List.generate(3, (index) => FeaturedCardWidget()),
                   )),
                 ],
-              )
+              ),
               //   Category
+              const SizedBox(height: 20),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Category', style: Theme.of(context).textTheme.titleLarge,),
+                      Text('See All', style: TextStyle(color: Theme.of(context).primaryColor),),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        CategoryWidget(text: 'Breakfast', keyValue: 'breakfast'),
+                        CategoryWidget(text: 'Lunch', keyValue: 'lunch'),
+                        CategoryWidget(text: 'Dinner', keyValue: 'dinner'),
+                        CategoryWidget(text: 'Snack', keyValue: 'snack'),
+                      ],
+                    ),
+                  )
+                ],
+              ),
               //   popular recipes
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 20,),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Popular Recipes', style: Theme.of(context).textTheme.titleLarge,),
+                      Text('See All', style: TextStyle(color: Theme.of(context).primaryColor),),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        RecipeWidget(),
+                        RecipeWidget(),
+                        RecipeWidget(),
+                      ],
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
