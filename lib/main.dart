@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:reciepe/provider/color_provider.dart';
+import 'package:reciepe/provider/favourite_provider.dart';
 import 'package:reciepe/provider/theme_provider.dart';
 import 'package:reciepe/theme.dart';
 
@@ -10,7 +11,8 @@ void main() {
   runApp(
     MultiProvider(providers: [
       ChangeNotifierProvider(create: (_) => ThemeProvider()),
-      ChangeNotifierProvider(create: (_) => ColorProvider())
+      ChangeNotifierProvider(create: (_) => ColorProvider()),
+      ChangeNotifierProvider(create: (_) => FavouriteProvider()),
     ],
     child: MyApp(),)
   );
