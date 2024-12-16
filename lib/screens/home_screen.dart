@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:reciepe/provider/theme_provider.dart';
 import 'package:reciepe/widgets/bottom_nav_bar_widget.dart';
 import 'package:reciepe/widgets/category_widget.dart';
-import 'package:reciepe/widgets/featured_card/featured_card_widget.dart';
+import 'package:reciepe/widgets/featured_card_widget.dart';
 import 'package:reciepe/widgets/recipe_widget.dart';
 import 'package:reciepe/models/recipe_model.dart';
 
@@ -30,13 +30,13 @@ class HomeScreen extends StatelessWidget {
         time: '15 min',
       ),
       RecipeModel(
-        image: 'assets/images/pancake.png',
+        image: 'assets/images/kebab.jpg',
         foodName: 'Japanese-style Pancake',
         cal: '64 kcal',
         time: '15 min',
       ),
       RecipeModel(
-        image: 'assets/images/pancake.png',
+        image: 'assets/images/salad.png',
         foodName: 'Japanese-style Pancake',
         cal: '64 kcal',
         time: '15 min',

@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:reciepe/models/recipe_model.dart';
 import 'package:reciepe/provider/favourite_provider.dart';
 
+import '../screens/screens.dart';
+
 class RecipeWidget extends StatelessWidget {
   final RecipeModel recipe;
 
@@ -11,7 +13,9 @@ class RecipeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => RecipeDetailsScreen(recipe: recipe,)));
+      },
       child: Container(
         height: 250,
         width: 200,
