@@ -14,6 +14,25 @@ An elegant and user-friendly **Recipe App** built with Flutter. This app allows 
 
 ---
 
+## 📸 Screenshots Light
+
+| **Home Screen**              | **Recipe Details**                       | **Favorites Screen**                    |
+|------------------------------|------------------------------------------|-----------------------------------------|
+| ![Home](screenshots/home_light.jpg) | ![Details](screenshots/food_details.jpg) | ![Favorites](screenshots/fav_light.jpg) |
+
+---
+## 📸 Screenshots Dark
+
+| **Home Screen**                    | **Recipe Details**                            | **Favorites Screen**                   |
+|------------------------------------|-----------------------------------------------|----------------------------------------|
+| ![Home](screenshots/home_dark.jpg) | ![Details](screenshots/food_details_dark.jpg) | ![Favorites](screenshots/fav_dark.jpg) |
+
+---
+## 🎥 Screenrecord
+
+https://github.com/user-attachments/assets/358f2723-65ef-4218-9f4a-ce0a608f7967
+
+---
 ## 📱 Features
 
 ### 1. **Home Screen**
@@ -96,25 +115,6 @@ lib/
 
 ---
 
-## 📸 Screenshots Light
-
-| **Home Screen**              | **Recipe Details**                       | **Favorites Screen**                    |
-|------------------------------|------------------------------------------|-----------------------------------------|
-| ![Home](screenshots/home_light.jpg) | ![Details](screenshots/food_details.jpg) | ![Favorites](screenshots/fav_light.jpg) |
-
----
-## 📸 Screenshots Dark
-
-| **Home Screen**                    | **Recipe Details**                            | **Favorites Screen**                   |
-|------------------------------------|-----------------------------------------------|----------------------------------------|
-| ![Home](screenshots/home_dark.jpg) | ![Details](screenshots/food_details_dark.jpg) | ![Favorites](screenshots/fav_dark.jpg) |
-
----
-## 🎥 Screenrecord
-
-https://github.com/user-attachments/assets/358f2723-65ef-4218-9f4a-ce0a608f7967
-
----
 
 ## 🌟 Conclusion
 
