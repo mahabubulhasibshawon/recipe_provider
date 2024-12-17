@@ -14,7 +14,6 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-
     // Define recipes as a list of RecipeModel
     final List<RecipeModel> recipes = [
       RecipeModel(
@@ -106,7 +105,7 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children:
-                        List.generate(3, (index) => FeaturedCardWidget()),
+                        List.generate(3, (index) => const FeaturedCardWidget()),
                       ),
                     ),
                   ],
@@ -172,7 +171,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavBarWidget(),
+      bottomNavigationBar: const BottomNavBarWidget(),
     );
   }
 }

@@ -12,7 +12,7 @@ class FavouriteScreen extends StatelessWidget {
         body: Consumer<FavouriteProvider>(builder: (context, provider, child) {
           final favourites = provider.favourites;
           return provider.favourites.isEmpty
-              ? Center(
+              ? const Center(
                   child: Text('NO FAVOURITES ADDED!'),
                 )
               : ListView.builder(
@@ -24,13 +24,13 @@ class FavouriteScreen extends StatelessWidget {
                       title: Text(recipe.foodName),
                       subtitle: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.local_fire_department_outlined,
                             size: 16,
                           ),
                           Text(' ${recipe.cal}'),
-                          SizedBox(width: 10),
-                          Icon(Icons.alarm, size: 16),
+                          const SizedBox(width: 10),
+                          const Icon(Icons.alarm, size: 16),
                           Text(' ${recipe.time}'),
                         ],
                       ),
@@ -38,13 +38,13 @@ class FavouriteScreen extends StatelessWidget {
                           onPressed: () {
                             provider.removeFavourite(recipe);
                           },
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.delete,
                             color: Colors.red,
                           )),
                     );
                   });
         }),
-        bottomNavigationBar: BottomNavBarWidget());
+        bottomNavigationBar: const BottomNavBarWidget());
   }
 }

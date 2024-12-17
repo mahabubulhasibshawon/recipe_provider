@@ -19,8 +19,8 @@ class RecipeWidget extends StatelessWidget {
       child: Container(
         height: 250,
         width: 200,
-        padding: EdgeInsets.all(20),
-        margin: EdgeInsets.only(right: 10),
+        padding:  const EdgeInsets.all(20),
+        margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
           color: Colors.grey.shade100,
           borderRadius: BorderRadius.circular(20),
@@ -76,7 +76,7 @@ class RecipeWidget extends StatelessWidget {
                             color: isFavourite ? Colors.red : Colors.black,
                           ),
                           padding: EdgeInsets.zero,
-                          constraints: BoxConstraints(),
+                          constraints: const BoxConstraints(),
                         ),
                       ),
                     );
@@ -84,9 +84,9 @@ class RecipeWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             Text(recipe.foodName,  style: TextStyle(color: Theme.of(context).colorScheme.scrim)),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

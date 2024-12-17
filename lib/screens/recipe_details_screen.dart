@@ -7,11 +7,12 @@ import '../models/recipe_model.dart';
 class RecipeDetailsScreen extends StatelessWidget {
   final RecipeModel recipe;
 
-  const RecipeDetailsScreen({Key? key, required this.recipe}) : super(key: key);
+  const RecipeDetailsScreen({super.key, required this.recipe});
 
   @override
   Widget build(BuildContext context) {
-    final favoritesProvider = Provider.of<FavouriteProvider>(context);
+    // final favoritesProvider = Provider.of<FavouriteProvider>(context);
+    print('full build');
 
     return Scaffold(
       body: Stack(
@@ -41,6 +42,7 @@ class RecipeDetailsScreen extends StatelessWidget {
             right: 16,
             child: Consumer<FavouriteProvider>(
               builder: (context, provider, child) {
+                print('fav build');
                 final isFavourite = provider.isFavourite(recipe);
                 return Container(
                   height: 30,
@@ -65,7 +67,7 @@ class RecipeDetailsScreen extends StatelessWidget {
                         color: isFavourite ? Colors.red : Colors.black,
                       ),
                       padding: EdgeInsets.zero,
-                      constraints: BoxConstraints(),
+                      constraints: const BoxConstraints(),
                     ),
                   ),
                 );
@@ -81,7 +83,7 @@ class RecipeDetailsScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.onPrimary,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
                 ),
                 child: SingleChildScrollView(
                   controller: scrollController,
@@ -177,7 +179,7 @@ class RecipeDetailsScreen extends StatelessWidget {
   Widget _buildTabButton(String title, {bool isSelected = false}) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(right: 5),
+        margin: const EdgeInsets.only(right: 5),
         padding: const EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
           color: isSelected ? Colors.teal : Colors.grey.shade200,
